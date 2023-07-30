@@ -1,13 +1,13 @@
 version: '3'
 services:
   fulltclash:
-    image: fulltclash:3.6.0_dev
+    image: 66211900/fulltclash:3.6.0_dev
     restart: "always"
     environment:
       - TZ=Asia/Shanghai
     volumes:
       - ./config.yaml:/app/FullTclash/resources/config.yaml
-      - ./ad:/app/FullTclash/addons
-      - ./fulltclash-linux-amd64:/app/FullTclash/bin/fulltclash-linux-amd64
-      - ./callback:/app/FullTclash/addons/callback
-      - ./unlockTest:/app/FullTclash/addons/unlockTest
+      #- ./ad:/app/FullTclash/addons
+      #- ./fulltclash-linux-amd64:/app/FullTclash/bin/fulltclash-linux-amd64
+      #- ./callback:/app/FullTclash/addons/callback
+      #- ./unlockTest:/app/FullTclash/addons/unlockTest
