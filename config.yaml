@@ -1,83 +1,148 @@
+# 注意，yaml配置文件对缩进敏感，请不要强迫症删掉#号之间的空格。
 admin:
-- qiufeng23
+- 12345678 #管理员，此处写你的账户id或用户名，必须配置该项，否则程序会自动退出
 bot:
-  api_hash: c35c99183e88ae0183b07c63369866e3
-  api_id: '25604809'
-  bot_token: 6201399071:AAF0Gio-MQ1XUK77MNnJPM4lXFPY7g0ZL2Y
-  proxy: 192.168.2.253:7891:Clash:DKPxLIEk
-clash:
-  auto-start: true
-  branch: meta
-  core: 16
-  path: ./bin/fulltclash-linux-amd64
-  startup: 10001
-  workpath: ./clash
-image:
-  color:
-    delay:
-    - label: 1
-      name: "\u4E91\u6C34"
-      value: '#B4C3D0'
-    - label: 100
-      name: "\u6674\u5C71"
-      value: '#91AEC4'
-    - label: 200
-      name: "\u79CB\u6CE2"
-      value: '#8BB8CB'
-    - label: 300
-      name: "\u5929\u97F5"
-      value: '#5796B3'
-    - label: 500
-      name: "\u9E22\u5C3E"
-      value: '#1988AE'
-    - label: 1000
-      name: "\u7538\u5B50"
-      value: '#238BBC'
-    - label: 2000
-      name: "\u666F\u6CF0"
-      value: '#2A73AC'
-    - label: 99999
-      name: "\u666F\u6CF0"
-      value: '#8d8b8e'
-    speed:
-    - label: 0
-      name: "\u4E91\u6C34"
-      value: '#FFECD1'
-    - label: 1
-      name: "\u6674\u5C71"
-      value: '#FFD3A3'
-    - label: 5
-      name: "\u79CB\u6CE2"
-      value: '#FFB475'
-    - label: 10
-      name: "\u5929\u97F5"
-      value: '#FF9652'
-    - label: 20
-      name: "\u9E22\u5C3E"
-      value: '#FF6519'
-    - label: 60
-      name: "\u7538\u5B50"
-      value: '#DB4712'
-    - label: 100
-      name: "\u666F\u6CF0"
-      value: '#B72F0C'
-  title: FullTclash
-masterconfig:
-  '5834489131':
-    bridge: '6012171292'
-    public-key: poxeidoon114514
-  '@WONGSSPEEDBOT':
-    bridge: '6025989449'
-    public-key: www114514
-proxy: Clash:DKPxLIEk@192.168.2.253:7890
-speedconfig:
-  interval: 5
-speedfile:
-- https://dl.google.com/dl/android/studio/install/3.4.1.0/android-studio-ide-183.5522156-windows.exe
-- https://download.microsoft.com/download/2/0/E/20E90413-712F-438C-988E-FDAA79A8AC3D/dotnetfx35.exe
-- https://dl.google.com/android/studio/maven-google-com/stable/offline-gmaven-stable.zip
-- http://cachefly.cachefly.net/200mb.test
-speednodes: 9999
-speedthread: 8
-user:
-- qiufeng23
+ api_id: 123456 # Telegram的api_id
+ api_hash: ABCDEFG # Telegram的api_hash
+ bot_token: 123456:ABCDEFG #bot的token
+# ====================以上为必填项，否则无法启动成功========================
+# proxy: host:端口:用户名:密码 #socks5代理，用户名和密码为可选配置，已和下面的proxy单独分离，请勿混用
+# strictmode: false # 严格模式，代表测试的时侯，bot内联按钮只有发起测试的主人才能按，否则所有用户用户权限都可以按。默认false，目前未适配，敬请期待。
+# scripttext: "⏳联通性测试进行中..."  # 解锁脚本测试进度条自定义文本
+# analyzetext: "⏳节点测试拓扑进行中..."  # 拓扑测试进度条自定义文本
+# speedtext: "⏳速度测试进行中..."  # 速度测试进度条自定义文本
+# bar: "=" #进度条自定义文本
+# bleft: "[" #左括号自定义文本
+# bright: "]" #右括号自定义文本
+# bspace: "  " #空格自定义文本，默认为2个
+# command: ['mycommand1', 'mycommand2'] #自定义指令，用于适配权限回调。高级用法，不会无需配置。
+#以下是fulltclash的buildtoken，可以用默认的，但是安全性得不到保障，具体原因详见文档
+#buildtoken: c7004ded9db897e538405c67e50e0ef0c3dbad717e67a92d02f6ebcfd1022a5ad1d2c4419541f538ff623051759ec000d2f426e03f9709a6608570c5b9141a6b
+#clash:
+# path: './bin/fulltclash-linux-amd64' # 代理客户端的路径，默认为 ./bin/ 下。不会弄不要动这里，用默认的即可。本仓库默认仅提供win-amd64与linux-amd64两种(意味着如果为这两种架构，这里不用改。)，其他架构需要自行编译。
+# allow-caching: false  #是否缓存测试过程产生的订阅，若否，则测试完成后会自动删除测试订阅，以免造成空间浪费。（此配置暂不生效）
+# core: 4 # 核心数，数量越多测试速度越快，但代价是内存会大量占用(每个核心大概10M)，自己的机子多少内存自己平衡。默认值为1.
+# auto-start: false # bot启动时顺带启动,若为false则需要在 bot上输入/clash start 手动启动，默认false
+# startup: 1124 #起始端口。表示从此端口开始往下数占用数量，比如核心数为4，就会占用[1124,1126,1128,1130]共4个端口，遇到端口占用时可配置此项。推荐10000以上作为初始端口
+# branch: origin #clash内核上游分支，仅有两个有效值: [origin, meta], meta分支支持更多协议，比如vless、tuic等，但是使用上较为不可控，默认为origin原生内核。
+#proxy: "host:端口" # http配置代理(非socks5)，括号内可选用于下载获取订阅链接，订阅链接国内打不开可尝试开启（可选配置）,本机提供的代理可以这样填: '127.0.0.1:7890'
+#如果要http代理要验证，配置格式为: proxy: "用户名:密码@host:端口" 比如: user1:112233@127.0.0.1:7890
+#geoip-api: "ip-api.com" # GEOIP 测试api，取二级域名,目前支持 ip-api.com ip.sb ipleak.net ipdata.co ipapi.co 五种，其中 ipdata 需要配置下面的geoip-key
+#geoip-key: xxxxxxx #ipdata 的 apikey，如果使用其他api则无需填写
+#subconvertor: #订阅转换(此配置主要开发者已无心维护，能用但不稳定)
+# enable: true #是否启用
+# host: '127.0.0.1:25500' #域名或者ip加端口
+# remoteconfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini" #远程配置
+#pingurl: http://www.gstatic.com/generate_204  #自定义延迟测试URL
+#netflixurl: "https://www.netflix.com/title/80113701"  #自定义奈飞非自制剧检测网页，注意在更换此链接时请确保是非自制的链接。
+#speedfile:  #自定义测速文件，可以添加多个诸如以下格式或者[https://1.com, https://2.com]
+#- https://dl.google.com/dl/android/studio/install/3.4.1.0/android-studio-ide-183.5522156-windows.exe
+#- https://dl.google.com/dl/android/studio/install/3.4.1.0/android-studio-ide-183.5522156-windows.exe
+#speednodes: 300 # 测速节点数量限制，超过将不会进行测速
+#speedthread: 4 #测速线程
+#nospeed: true #禁用测速，开启后将无法测速。
+#speed_end_colors_switch: false #速度测试渐变色模式，默认关闭
+#end_colors_switch: false #联通性测试渐变色模式，默认关闭
+#ipstack: true #开启ipv4，ipv6双栈检测。默认关闭(false)，开启后可以检测节点是否支持ipv4和ipv6，代价是检测时间会延长。
+#localip: false  #本地ip数据库(MaxMind格式) ,请将asn数据库与city数据库放入"/resources/databases"文件夹
+#dasn: "GeoLite2-ASN.mmdb" #ASN数据库名称，用于获取AS编号
+#dorg: "GeoLite2-ASN.mmdb" #org数据库mingc，用于获取组织名称
+#dcity: "GeoLite2-City.mmdb" #city数据库名称，用于获取地区代码
+#speedconfig: #测速相关配置
+# interval: 10 #每个节点的测速时长
+#entrance:  #入口显示配置
+# switch: "ip" #设置为ip将显示入口ip段，设置为cluster将显示簇，默认设置为ip，PS:这里的簇为入口域名绑定的ip地址数量
+#user: 12345678 #用户列表，/grant 命令授权的目标会保存在这。推荐使用bot进行授权，而非手动配置。（可选配置）
+#emoji: #emoji可选配置
+# enable: true #是否启用,默认启用。若否，则在输出图片时emoji将无法正常显示。关闭该项可解决部分图片生成失败的问题。（可选配置）
+# emoji-source: 'TwemojiLocalSource' #emoji表情源。默认值为TwemojiLocalSource。分为web源与本地源。可配置的值参考 ./libs/emoji_custom/__all__ 里面的成员变量。目前本地源仅支持: TwemojiLocalSource
+#font: './resources/苹方黑体-准-简.ttf' #自定义字体，这里填字体的路径
+#slaveconfig:
+#  default-slave: # 默认后端配置。
+#    comment: "本地测试后端" # 默认测试后端的备注。
+#    username: "local" # 默认测试后端的ID，此项请勿修改，会影响本地后端的运行。
+#userconfig: #用户权限组相关配置
+#  rule: #测试时的默认规则,3.6.0加入
+#    "规则名":
+#      enable: true
+#      slaveid: local
+#      script: ["Netflix", "Youtube", "Disney+", "维基百科"]
+#      sort: "HTTP升序"
+
+
+#----------------------------   以下为绘图相关配置   --------------------------------#
+
+#image:
+# title: 'FullTclash' # 绘图时的标题
+# 以下是颜色配置，其中speed是速度相关,name为颜色名字，value为颜色值，目前仅支持十六进制，label是颜色对应的速度区间（单位MB）,不用动，只需改value值，其他项是为了做区分。
+# color:
+#  speed: # 刚刚好有七个颜色，多一个少一个可能会有奇怪的效果。注意缩进。如果不想有太多颜色，可以两个颜色取同样的颜色值。
+#   - { label: 0, name: '云水', value: '#B4C3D0', alpha: 255, end_color: '#B4C3D0' }
+#   - { label: 1, name: '晴山', value: '#91AEC4', alpha: 255, end_color: '#91AEC4' }
+#   - { label: 5, name: '秋波', value: '#8BB8CB', alpha: 255, end_color: '#8BB8CB' }
+#   - { label: 10, name: '天韵', value: '#5796B3', alpha: 255, end_color: '#5796B3' }
+#   - { label: 20, name: '鸢尾', value: '#1988AE', alpha: 255, end_color: '#1988AE' }
+#   - { label: 60, name: '甸子', value: '#238BBC', alpha: 255, end_color: '#238BBC' }
+#   - { label: 100, name: '景泰', value: '#2A73AC', alpha: 255, end_color: '#2A73AC' }
+#  delay: #延迟单位: ms
+#   - { label: 1, name: '云水', value: '#B4C3D0', alpha: 255, end_color: '#B4C3D0' }
+#   - { label: 100, name: '晴山', value: '#91AEC4', alpha: 255, end_color: '#91AEC4' }
+#   - { label: 200, name: '秋波', value: '#8BB8CB', alpha: 255, end_color: '#8BB8CB' }
+#   - { label: 300, name: '天韵', value: '#5796B3', alpha: 255, end_color: '#5796B3' }
+#   - { label: 500, name: '鸢尾', value: '#1988AE', alpha: 255, end_color: '#1988AE' }
+#   - { label: 1000, name: '甸子', value: '#238BBC', alpha: 255, end_color: '#238BBC' }
+#   - { label: 2000, name: '景泰', value: '#2A73AC', alpha: 255, end_color: '#2A73AC' }
+#   - { label: 99999, name: '景泰', value: '#8d8b8e', alpha: 255 }  #第八个为超时，label无用
+#  out_color: #topo图用于分辨出口的颜色
+#   - { name: '云水', value: '#B4C3D0', alpha: 255, end_color: '#B4C3D0' }
+#   - { name: '晴山', value: '#91AEC4', alpha: 255, end_color: '#91AEC4' }
+#   - { name: '秋波', value: '#8BB8CB', alpha: 255, end_color: '#8BB8CB' }
+#   - { name: '天韵', value: '#5796B3', alpha: 255, end_color: '#5796B3' }
+#   - { name: '鸢尾', value: '#1988AE', alpha: 255, end_color: '#1988AE' }
+#   - { name: '甸子', value: '#238BBC', alpha: 255, end_color: '#238BBC' }
+#   - { name: '景泰', value: '#2A73AC', alpha: 255, end_color: '#2A73AC' }
+#  "yes": '#bee47e' #解锁色块的颜色，注意不要去掉双引号
+#  "yesalpha": 255 #解锁颜色块透明度
+#  "yesend": '#bee47e' #解锁色块的渐变结束颜色，注意不要去掉双引号
+#  "no": '#ee6b73' #失败色块的颜色，注意不要去掉双引号
+#  "noalpha": 255 #失败颜色块透明度
+#  "noend": '#ee6b73' #失败色块的渐变结束颜色，注意不要去掉双引号
+#  na: '#8d8b8e' #N/A色块的颜色
+#  naalpha: 255  #N/A颜色块透明度
+#  naend: '#8d8b8e' #N/A色块的渐变结束颜色
+#  wait: '#dcc7e1' #待解锁色块的颜色
+#  waitalpha: 255  #待解锁色块的颜色
+#  waitend: '#dcc7e1' #待解锁色块的渐变结束颜色
+#  iprisk: #IP风险色块颜色,名称后面加alpha为颜色块透明度属性
+#   low: '#ffffff'
+#   lowalpha: 255
+#   lowend: '#ffffff'
+#   medium: '#ffffff'
+#   mediumalpha: 255
+#   mediumend: '#ffffff'
+#   high: '#ffffff'
+#   highalpha: 255
+#   hightend: '#ffffff' 
+#   veryhigh: '#ffffff'
+#   veryhighalpha: 255
+#   veryhighend: '#ffffff'
+#  warn: '#fcc43c' #警告色块，一般为黄色或橙色
+#  warnalpha: 255  #警告颜色块透明度
+#  warnend: '#fcc43c' #警告渐变结束色块
+# watermark: #水印
+#  enable: true #是否启用
+#  text: '只是一个水印' #水印文本
+#  color: '#000000' #颜色值
+#  alpha: 16 # 透明度, 可用范围(0-255)
+#  font_size: 64 #字体大小
+#  angle: -16.0 #旋转角度
+#  row_spacing: 0 #行距
+#  start_y: 0 #纵坐标起始位置
+# background: #背景颜色
+#  backgrounds: '#ffffff' #联通性测试背景色
+#  ins: '#ffffff' #拓扑测试入口topo背景色
+#  outs: '#ffffff' #拓扑测试出口topo背景色
+#  speedtest: '#ffffff' #速度测试
+#  speedtitle: '#EAEAEA' #速度测试标题栏颜色
+#  testtitle: '#EAEAEA' #联通性测试标题栏颜色
+#  topotitle: '#EAEAEA' #拓扑测试标题栏颜色
