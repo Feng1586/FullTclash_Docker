@@ -1,0 +1,83 @@
+admin:
+- qiufeng23
+bot:
+  api_hash: c35c99183e88ae0183b07c63369866e3
+  api_id: '25604809'
+  bot_token: 6201399071:AAF0Gio-MQ1XUK77MNnJPM4lXFPY7g0ZL2Y
+  proxy: 192.168.2.253:7891:Clash:DKPxLIEk
+clash:
+  auto-start: true
+  branch: meta
+  core: 16
+  path: ./bin/fulltclash-linux-amd64
+  startup: 10001
+  workpath: ./clash
+image:
+  color:
+    delay:
+    - label: 1
+      name: "\u4E91\u6C34"
+      value: '#B4C3D0'
+    - label: 100
+      name: "\u6674\u5C71"
+      value: '#91AEC4'
+    - label: 200
+      name: "\u79CB\u6CE2"
+      value: '#8BB8CB'
+    - label: 300
+      name: "\u5929\u97F5"
+      value: '#5796B3'
+    - label: 500
+      name: "\u9E22\u5C3E"
+      value: '#1988AE'
+    - label: 1000
+      name: "\u7538\u5B50"
+      value: '#238BBC'
+    - label: 2000
+      name: "\u666F\u6CF0"
+      value: '#2A73AC'
+    - label: 99999
+      name: "\u666F\u6CF0"
+      value: '#8d8b8e'
+    speed:
+    - label: 0
+      name: "\u4E91\u6C34"
+      value: '#FFECD1'
+    - label: 1
+      name: "\u6674\u5C71"
+      value: '#FFD3A3'
+    - label: 5
+      name: "\u79CB\u6CE2"
+      value: '#FFB475'
+    - label: 10
+      name: "\u5929\u97F5"
+      value: '#FF9652'
+    - label: 20
+      name: "\u9E22\u5C3E"
+      value: '#FF6519'
+    - label: 60
+      name: "\u7538\u5B50"
+      value: '#DB4712'
+    - label: 100
+      name: "\u666F\u6CF0"
+      value: '#B72F0C'
+  title: FullTclash
+masterconfig:
+  '5834489131':
+    bridge: '6012171292'
+    public-key: poxeidoon114514
+  '@WONGSSPEEDBOT':
+    bridge: '6025989449'
+    public-key: www114514
+proxy: Clash:DKPxLIEk@192.168.2.253:7890
+speedconfig:
+  interval: 5
+speedfile:
+- https://dl.google.com/dl/android/studio/install/3.4.1.0/android-studio-ide-183.5522156-windows.exe
+- https://download.microsoft.com/download/2/0/E/20E90413-712F-438C-988E-FDAA79A8AC3D/dotnetfx35.exe
+- https://dl.google.com/android/studio/maven-google-com/stable/offline-gmaven-stable.zip
+- http://cachefly.cachefly.net/200mb.test
+speednodes: 9999
+speedthread: 8
+user:
+- qiufeng23
